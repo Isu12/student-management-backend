@@ -11,7 +11,7 @@ interface IStudent extends Document {
 }
 
 const StudentSchema = new Schema<IStudent>({
-    nic: { type: String, required: true },
+    nic: { type: String, required: true , unique: true},
     firstName: { type: String, required: true },
     LastName: { type: String, required: true },
     age: { type: Number, required: true },
@@ -19,6 +19,10 @@ const StudentSchema = new Schema<IStudent>({
     email: { type: String, required: true, unique: true },
     schoolName: { type: String, required: true }
 
+
 });
 
 export default mongoose.model<IStudent>('Student', StudentSchema);
+
+
+
